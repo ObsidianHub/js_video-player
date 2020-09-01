@@ -14,6 +14,18 @@ class VideoPlayer {
     // start plugin
     this.events();
   }
+
+  events() {
+    this.video.addEventListener("click", (e) => this.togglePlay());
+    this.video.addEventListener("timeupdate", (e) => this.handleProgress());
+  }
+
+  togglePlay() {
+    // play/pause videoplayer
+    const method = this.video.paused ? "play" : "pause";
+    this.toggle.textContent = this.video.paused ? "❚ ❚" : "➤";
+    this.video[method]();
+  }
 }
 
 const video = new VideoPlayer();
