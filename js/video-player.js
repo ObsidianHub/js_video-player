@@ -9,4 +9,9 @@ class VideoPlayer {
     this.ranges = this.player.querySelectorAll(".player__slider");
     this.mouseDown = false;
   }
+
+  init() {
+    // start plugin
+    this.events();
+  }
 }
