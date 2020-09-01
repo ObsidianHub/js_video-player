@@ -15,3 +15,6 @@ class VideoPlayer {
     this.events();
   }
 }
+
+const video = new VideoPlayer();
+video.init();
