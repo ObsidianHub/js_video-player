@@ -34,6 +34,11 @@ class VideoPlayer {
     this.video[method]();
   }
 
+  handleRangeUpdate(e) {
+    // speed/volume rates
+    this.video[e.target.name] = e.target.value;
+  }
+
   handleProgress() {
     const percent = (this.video.currentTime / this.video.duration) * 100;
     this.progressBar.style.flexBasis = `${percent}%`;
