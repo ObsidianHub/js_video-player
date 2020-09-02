@@ -28,6 +28,10 @@ class VideoPlayer {
     this.skipButtons.forEach((btn) =>
       btn.addEventListener("click", (e) => this.skip(e))
     );
+    this.progress.addEventListener("click", (e) => this.scrub(e));
+    this.progress.addEventListener("mousemove", (e) => this.scrub(e));
+    this.progress.addEventListener("mousedown", () => (this.mouseDown = true));
+    this.progress.addEventListener("mouseup", () => (this.mouseDown = false));
   }
 
   togglePlay() {
