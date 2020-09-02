@@ -26,6 +26,11 @@ class VideoPlayer {
     this.toggle.textContent = this.video.paused ? "❚ ❚" : "➤";
     this.video[method]();
   }
+
+  handleProgress() {
+    const percent = (this.video.currentTime / this.video.duration) * 100;
+    this.progressBar.style.flexBasis = `${percent}%`;
+  }
 }
 
 const video = new VideoPlayer();
