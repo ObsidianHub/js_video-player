@@ -55,6 +55,13 @@ class VideoPlayer {
     const percent = (this.video.currentTime / this.video.duration) * 100;
     this.progressBar.style.flexBasis = `${percent}%`;
   }
+
+  scrub(e) {
+    if (this.mouseDown) {
+      this.video.currentTime =
+        (e.offsetX / this.progress.offsetWidth) * this.video.duration;
+    }
+  }
 }
 
 const video = new VideoPlayer();
