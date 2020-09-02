@@ -18,6 +18,7 @@ class VideoPlayer {
   events() {
     this.video.addEventListener("click", (e) => this.togglePlay());
     this.video.addEventListener("timeupdate", (e) => this.handleProgress());
+    this.toggle.addEventListener("click", (e) => this.togglePlay());
   }
 
   togglePlay() {
