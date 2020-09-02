@@ -25,6 +25,9 @@ class VideoPlayer {
     this.ranges.forEach((range) =>
       range.addEventListener("mousemove", (e) => this.handleRangeUpdate(e))
     );
+    this.skipButtons.forEach((btn) =>
+      btn.addEventListener("click", (e) => this.skip(e))
+    );
   }
 
   togglePlay() {
@@ -37,6 +40,11 @@ class VideoPlayer {
   handleRangeUpdate(e) {
     // speed/volume rates
     this.video[e.target.name] = e.target.value;
+  }
+
+  skip(e) {
+    // time skip << >>
+    this.video.currentTime += +e.target.dataset.skip;
   }
 
   handleProgress() {
