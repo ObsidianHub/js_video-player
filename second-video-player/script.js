@@ -18,3 +18,24 @@ function updatePlayIcon() {
 function updateProgress() {
   return true;
 }
+
+// Set video time to progress
+function updateProgress() {
+  return true;
+}
+
+// Stop video
+function stopVideo() {
+  return true;
+}
+
+video.addEventListener("click", toggleVideoStatus);
+video.addEventListener("pause", updatePlayIcon);
+video.addEventListener("play", updatePlayIcon);
+video.addEventListener("timeupdate", updateProgress);
+
+play.addEventListener("click", toggleVideoStatus);
+
+stop.addEventListener("click", stopVideo);
+
+progress.addEventListener("change", setVideoProgress);
